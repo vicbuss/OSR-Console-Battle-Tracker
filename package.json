@@ -1,0 +1,16 @@
+{
+  "name": "osr-console-battle-tracker",
+  "version": "1.0.0",
+  "description": "This is a console-run script to help the referee roll for monster HP and track the damage they receive.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rpg",
+    "osr",
+    "gm-tools"
+  ],
+  "author": "",
+  "license": "MIT"
+}

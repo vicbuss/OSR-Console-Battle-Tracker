@@ -1,4 +1,4 @@
 const FoeList = require('./FoeList'); 
 
-console.log('Hello World!');
+console.log('Running Enemy Tracker...');
 
