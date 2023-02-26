@@ -61,3 +61,5 @@ class FoeList {
         this.status();
     }
 }
+
+module.exports = FoeList; 
