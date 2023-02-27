@@ -33,9 +33,9 @@ class FoeList {
     */ 
 
     #rollDice(numberOfDice, numberOfSides) {
-        let maxMultiplier = numberOfSides + (numberOfDice - 1) * (numberOfSides - 1);
-        let minResult = 1 * numberOfDice;
-        let result = Math.floor(Math.random() * maxMultiplier + minResult);
+        const maxMultiplier = numberOfSides + (numberOfDice - 1) * (numberOfSides - 1);
+        const minResult = 1 * numberOfDice;
+        const result = Math.floor(Math.random() * maxMultiplier + minResult);
         return result;
     }
 
@@ -65,18 +65,20 @@ class FoeList {
     */
 
     status() {
-        let numberOfLivingMonsters = this.#foeList.length;
+        const numberOfLivingMonsters = this.#foeList.length;
 
         if (numberOfLivingMonsters === 0) {
             console.log("All foes are vanquished!")
+            console.log("");
         } else {
-            console.log(`There are ${numberOfLivingMonsters} living ${this.#foeName}s`);
+            console.log(`There are ${numberOfLivingMonsters} living ${this.#foeName}s...`);
             console.log("Their current HP is: ");
 
             for(let i = 0; i < numberOfLivingMonsters; i++) {
-                let monsterStatus = `${this.#foeList[i].name} : ${this.#foeList[i].hitPoints} hit points`
+                const monsterStatus = `[${i}] ${this.#foeList[i].name} : ${this.#foeList[i].hitPoints} hit points`
                 console.log(monsterStatus);
             }
+            console.log("");
         }
     }
 
@@ -88,13 +90,15 @@ class FoeList {
 
     damage(creatureIndex, damage) {
         this.#foeList[creatureIndex].hitPoints -= damage;
-        let damageMessage = `${this.#foeList[creatureIndex].name} lost ${damage} hit points!`
+        const damageMessage = `${this.#foeList[creatureIndex].name} lost ${damage} hit points!`
         console.log(damageMessage);
+        console.log("");
         
         if(this.#foeList[creatureIndex].hitPoints <= 0) {
-            let deathMessage = `${this.#foeList[creatureIndex].name} has been killed!`;
+            const deathMessage = `${this.#foeList[creatureIndex].name} has been killed!`;
             this.#foeList.splice(creatureIndex, 1);
             console.log(deathMessage);
+            console.log("");
         }
         this.status();
     }
