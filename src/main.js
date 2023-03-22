@@ -1,4 +1,4 @@
-const FoeList = require('./FoeList'); 
+const FoeList = require('./model/FoeList'); 
 
 console.log('Running Enemy Tracker...');
 console.log("");
